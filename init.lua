@@ -108,6 +108,8 @@ require('lspconfig').volar.setup({
 })
 require('lspconfig').clangd.setup({})
 require('lspconfig').lua_ls.setup({})
+require('lspconfig').angularls.setup({})
+require('lspconfig').pylsp.setup({})
 
 require('mini.animate').setup()
 
@@ -133,4 +135,11 @@ vim.api.nvim_create_autocmd({ 'VimEnter', 'VimLeave' }, {
 			uv.spawn(vim.env.TMUX_PLUGIN_MANAGER_PATH .. '/tmux-window-name/scripts/rename_session_windows.py', {})
 		end
 	end,
+})
+
+vim.diagnostic.config({
+    virtual_text = true,
+    signs = true,
+    underline = true,
+    update_in_insert = true,
 })
