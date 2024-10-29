@@ -11,12 +11,9 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
-local telescope = require('telescope')
-telescope.setup {
-    defaults = {
-        file_ignore_patterns = {
-            "node_modules",
-            ".cache"
-        }
-    }
-}
+vim.diagnostic.config({
+    virtual_text = true,
+    signs = true,
+    underline = true,
+    update_in_insert = true,
+})

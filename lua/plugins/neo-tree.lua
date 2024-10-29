@@ -6,5 +6,22 @@ return {
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
       "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    },
+    keys = {
+        {
+            "<leader>fe",
+            function ()
+                local neotreeconfig = {
+                    toggle = true,
+                    position = "float",
+                    root = vim.uv.cwd()
+                }
+
+                require("neo-tree.command").execute(neotreeconfig)
+            end,
+            mode = "n",
+            silent = true,
+            desc = "Launch the neo-tree file picker."
+        }
     }
 }
