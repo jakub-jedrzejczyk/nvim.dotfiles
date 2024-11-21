@@ -17,3 +17,6 @@ vim.diagnostic.config({
     underline = true,
     update_in_insert = true,
 })
+
+vim.opt.colorcolumn = "80"
+
